@@ -48,3 +48,37 @@ document.addEventListener('DOMContentLoaded', function () {
         timeline.classList.add('has-multiple');
     }
 });
+
+// PDF Modal Functions
+let currentPdfUrl = '';
+
+function openModal(modalId, pdfUrl) {
+    currentPdfUrl = pdfUrl;
+    const pdfViewer = document.getElementById('pdfViewer');
+    const downloadBtn = document.getElementById('downloadPdf');
+
+    // Set PDF source
+    pdfViewer.src = pdfUrl + '#view=fitH';
+
+    // Set download link
+    downloadBtn.href = pdfUrl;
+
+    // Show modal
+    document.getElementById('pdfModal').style.display = "block";
+    document.body.style.overflow = "hidden";
+}
+
+function closeModal() {
+    document.getElementById('pdfModal').style.display = "none";
+    document.body.style.overflow = "auto";
+
+    // Clear PDF viewer when closing
+    document.getElementById('pdfViewer').src = '';
+}
+
+// Close modal when clicking outside
+window.onclick = function (event) {
+    if (event.target == document.getElementById('pdfModal')) {
+        closeModal();
+    }
+}

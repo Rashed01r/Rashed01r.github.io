@@ -689,3 +689,61 @@ footer {
 .btn:hover {
     background-color: #0056b3;
 }
+
+
+/* Certificates Section - Mobile Responsiveness */
+@media (max-width: 768px) {
+    .certificates-grid {
+        grid-template-columns: 1fr;
+        /* Single column on mobile */
+        gap: 15px;
+        /* Smaller gap on mobile */
+    }
+
+    .certificate-card {
+        padding: 15px;
+        /* Slightly reduced padding */
+    }
+
+    .certificate-details h3 {
+        font-size: 1.1rem;
+        /* Slightly smaller heading */
+    }
+
+    .certificate-details p {
+        font-size: 0.9rem;
+        /* Smaller text */
+        margin: 3px 0;
+        /* Tighter spacing */
+    }
+
+    .certificate-link {
+        font-size: 0.9rem;
+        /* Smaller link text */
+    }
+}
+
+@media (max-width: 480px) {
+    .certificate-card {
+        flex-direction: column;
+        /* Stack icon above content */
+        align-items: center;
+        text-align: center;
+    }
+
+    .certificate-icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .modal-content {
+        width: 95%;
+        /* More screen width for modal */
+        padding: 10px;
+    }
+
+    .pdf-container {
+        height: 50vh;
+        /* Smaller PDF viewer on mobile */
+    }
+}
